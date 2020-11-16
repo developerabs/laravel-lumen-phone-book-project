@@ -18,3 +18,5 @@ $router->get('/', function () use ($router) {
 });
 $router->post('/registation','RegistationController@onRegistation');
 $router->post('/login','LoginController@onLogin');
+
+$router->post('/tokentest',['middleware'=>'auth','uses'=>'LoginController@tokenTest']);
