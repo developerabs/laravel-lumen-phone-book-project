@@ -19,4 +19,8 @@ $router->get('/', function () use ($router) {
 $router->post('/registation','RegistationController@onRegistation');
 $router->post('/login','LoginController@onLogin');
 
-$router->post('/tokentest',['middleware'=>'auth','uses'=>'LoginController@tokenTest']);
+//$router->post('/tokentest',['middleware'=>'auth','uses'=>'LoginController@tokenTest']);
+
+$router->post('/insert',['middleware'=>'auth','uses'=>'PhoneBookController@onInsert']);
+$router->post('/select',['middleware'=>'auth','uses'=>'PhoneBookController@onSelect']);
+$router->post('/delete',['middleware'=>'auth','uses'=>'PhoneBookController@onDelete']);
